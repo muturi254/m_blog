@@ -5,3 +5,5 @@ __pycache__/
 .flaskenv
 .env
 .dotenv
+
+*.db
