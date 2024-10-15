@@ -8,7 +8,7 @@ from flask_login import UserMixin
 from app import db, login
 
 # models
-class User(db.Model, UserMixin):
+class User(UserMixin, db.Model):
     # __tablename__ = "users"
 
 
@@ -42,4 +42,4 @@ class Post(db.Model):
 # add loading a user
 @login.user_loader
 def load_user(id):
-    db.session.get(User, int(id))
+    return db.session.get(User, int(id))
